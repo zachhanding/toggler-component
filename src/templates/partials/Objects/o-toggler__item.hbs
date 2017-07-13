@@ -1,0 +1,6 @@
+<h2 class="o-toggler__title {{#if_block 'active'}}js-active{{/if_block}}" data-toggler-title role="tab" id="tab-{{#block 'id'}}{{/block}}" aria-controls="panel-{{#block 'id'}}{{/block}}" aria-selected="false">
+  <a href="#panel-{{#block 'id'}}{{/block}}"><span>{{#block 'term'}}{{/block}}</span></a>
+</h2>
+<div class="o-toggler__content {{#if_block 'active'}}js-active{{/if_block}}" data-toggler-content role="tabpanel" id="panel-{{#block 'id'}}{{/block}}" aria-labelledby="tab-{{#block 'id'}}{{/block}}" aria-expanded="false" aria-hidden="true">
+  {{#block 'description'}}{{/block}}
+</div>

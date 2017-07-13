@@ -1,0 +1,8 @@
+{
+  "name": "toggler",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "3.1.1"
+   },
+  "private": true
+}

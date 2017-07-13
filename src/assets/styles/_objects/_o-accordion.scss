@@ -1,0 +1,74 @@
+//== Accordion
+//
+//** This stylesheet contains styles for the Accordion object
+//   as well as the Accordion Item object.
+
+.o-accordion {
+  margin: 0 0 1.25rem;
+
+  > .o-toggler__title {
+    position: relative;
+    margin: 1.25rem 0 0;
+    font-size: 1em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    a {
+      display: block;
+      transition: border-radius $timing-out $motion-out;
+      border-radius: 0.5rem;
+      background: $grayscale-swatch-c;
+      padding: 0.625rem 1.25rem;
+      text-decoration: none;
+      color: $base-font-color;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+        transition: transform $timing-in $motion-in;
+        color: $light-blue;
+        font-family: "FontAwesome";
+        content: '\f078';
+      }
+    }
+
+    &.js-active {
+
+      a {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &::after {
+          transform: translateY(-50%) rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  > .o-toggler__content {
+    display: none;
+    margin: 0 0 1.25rem;
+    border: 1px solid $grayscale-swatch-c;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  &.o-disabled {
+    > .o-toggler__title {
+      a {
+        pointer-events: none;
+
+        &::after {
+          position: static;
+          content: '';
+        }
+      }
+    }
+  }
+}

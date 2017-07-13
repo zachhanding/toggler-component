@@ -1,0 +1,185 @@
+//== Stepper
+//
+//** This stylesheet contains styles for the Stepper object
+//   as well as the Stepper Item object.
+
+.o-stepper {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -5px;
+  counter-reset: section;
+
+  &::before {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    left: 5px;
+    background-color: $grayscale-swatch-b;
+    height: 1px;
+    content: '';
+  }
+
+  &.o-disabled {
+    > .o-toggler__title.js-active {
+
+      &,
+      & ~ .o-toggler__title {
+        a {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  > .o-toggler__title {
+    position: relative;
+    order: 1;
+    margin: 10px 0 30px;
+    font-size: 1em;
+    font-weight: 400;
+
+    a {
+      display: inline-block;
+      margin: 0 -5px;
+      background-color: $white;
+      padding: 0 10px;
+      text-decoration: none;
+      color: $base-font-color;
+
+      span {
+        display: none;
+        color: $primary-swatch-a;
+        font-family: $font-stack-helvetica;
+      }
+
+      &::after {
+        display: block;
+        border-radius: 50%;
+        background-color: $primary-swatch-a;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        text-indent: 0;
+        line-height: 30px;
+        color: $white;
+        content: '\2714';
+        counter-increment: section;
+      }
+    }
+
+    &.js-active {
+      // flex-grow: 1;
+
+      a {
+        span {
+          color: $primary-swatch-b;
+        }
+
+        &::after {
+          background-color: $primary-swatch-b;
+          content: counter(section);
+        }
+      }
+
+      ~ .o-toggler__title {
+        a {
+          span {
+            color: $grayscale-swatch-b;
+          }
+
+          &::after {
+            background-color: $grayscale-swatch-b;
+            content: counter(section);
+            counter-increment: section;
+          }
+        }
+      }
+    }
+  }
+
+  > .o-toggler__content {
+    display: none;
+    order: 2;
+    margin: 0 5px 1.25rem;
+    width: 100%;
+  }
+}
+
+
+
+@include media($below-mobile) {
+  .o-mobile-takeover {
+    .o-stepper > .o-toggler__title {
+      a {
+        background-color: $grayscale-swatch-d;
+      }
+    }
+  }
+}
+
+@include media($above-tablet) {
+  .o-stepper {
+    justify-content: center;
+
+    &::before {
+      position: static;
+      content: none;
+    }
+
+    > .o-toggler__title {
+      a {
+        padding: 0 50px;
+
+        span {
+          display: block;
+          line-height: 35px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        &::after {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          width: 35px;
+          height: 35px;
+          line-height: 31px;
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
+
+      &.js-active {
+        flex-grow: 0;
+
+        a {
+          &::after {
+            background-color: $primary-swatch-b;
+          }
+        }
+
+        ~ .o-toggler__title {
+          a {
+            &::after {
+              border-color: 2px solid $grayscale-swatch-b;
+              background-color: $white;
+              width: 35px;
+              height: 35px;
+              line-height: 31px;
+              color: $grayscale-swatch-b;
+            }
+          }
+        }
+      }
+    }
+
+    > .o-toggler__content {
+      margin: 0 auto 1.25rem;
+      max-width: 450px;
+    }
+  }
+}

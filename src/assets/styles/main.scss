@@ -1,0 +1,48 @@
+//== INVERTED TRIANGLE CSS (ITCSS)
+//
+//** 1. Write CSS in specificity order.
+//   2. Make sure new rulesets are additive,
+//      rather than overriding previous rulesets.
+//   3. Order stylesheets following the inverted triangle,
+//      starting with general rules, and working toward more specialized rules.
+//
+//   _____________
+//   \___________/--SETTINGS
+//    \_________/------TOOLS
+//     \_______/----GENEREIC
+//      \_____/-----ELEMENTS
+//       \___/-------OBJECTS
+//        \_/-----COMPONENTS
+//         V-------UTILITIES
+
+//== SETTINGS
+//
+//** Where we add our variables and typography, etc.
+@import "_settings/font-stacks";
+@import "_settings/variables";
+@import "_settings/motion";
+
+
+//== TOOLS
+//
+//** Where we add our mixins and functions.
+//   These first two layers are for preprocessors,
+//   and shouldn’t output any CSS.
+@import "_tools/bourbon";
+@import "_tools/neat-helpers";
+@import "_tools/neat";
+
+
+//== GENERIC
+//
+//** Where you can put resets, normalisers, and global rules.
+@import "_generic/box-sizing";
+@import "_generic/layout";
+
+
+//== OBJECTS
+//
+//** Where we put our objects. This can be used for object-oriented CSS.
+//   https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/
+@import '_objects/o-accordion';
+@import '_objects/o-stepper';

@@ -1,0 +1,66 @@
+---
+title: Get Started - Streamlined
+js:
+  -
+    src: assets/scripts/templates.js
+  -
+    src: assets/scripts/start-service.js
+  -
+    src: https://maps.googleapis.com/maps/api/js?key=AIzaSyB-B573v3bZsAy8sPPhEIRKQLaETq6BJZU&libraries=places
+    async: true
+    defer: true
+---
+
+<div class="o-mobile-takeover">
+  <div class="o-title-bar">
+    <h1>Start New Service</h1>
+    <a href="home.html">Cancel</a>
+  </div>
+
+  {{#extend 'o-toggler'}}
+  {{#content 'type'}}stepper{{/content}}
+  {{#content 'disabled-class'}}o-disabled{{/content}}
+  {{#content 'items'}}
+    {{#extend 'o-toggler__item'}}
+      {{#content 'id'}}step-1{{/content}}
+      {{#content 'term'}}Service Address{{/content}}
+      {{#content 'description'}}
+
+        <h2>Step 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      {{/content}}
+    {{/extend}}
+    {{#extend 'o-toggler__item'}}
+      {{#content 'id'}}step-2{{/content}}
+      {{#content 'term'}}Online Access{{/content}}
+      {{#content 'description'}}
+
+      <h2>Step 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      {{/content}}
+    {{/extend}}
+    {{#extend 'o-toggler__item'}}
+      {{#content 'id'}}step-3{{/content}}
+      {{#content 'term'}}Service Start Date{{/content}}
+      {{#content 'description'}}
+
+      <h2>Step 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      {{/content}}
+    {{/extend}}
+    {{#extend 'o-toggler__item'}}
+      {{#content 'id'}}step-4{{/content}}
+      {{#content 'term'}}Confirmation{{/content}}
+      {{#content 'description'}}
+
+      <h2>Step 4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      {{/content}}
+    {{/extend}}
+  {{/content}}
+  {{/extend}}
+</div>
